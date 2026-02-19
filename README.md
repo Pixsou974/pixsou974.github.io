@@ -1,4 +1,4 @@
-| [Windows](./Windows.md) | [Cisco](./Cisco.md) |
+|💻[Windows](./Windows.md) |⌨️[Cisco](./Cisco.md) |
 |:---:|:---:|
 
 # 🎉 Mon Wiki 🎉
