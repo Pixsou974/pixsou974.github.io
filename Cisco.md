@@ -1,6 +1,6 @@
 
 |[RETOUR](README.md)|
-|:---|:---|
+|:---|
 # Parametrer un switch
 ## Accés au Switch 
 Les Commandes a Connaitre
@@ -10,11 +10,14 @@ Les Commandes a Connaitre
 |enable|Acces au mode priviligié|
 |#configure terminal|Mode de configuration globale|
 |#hostname <nom_du_switch>|Nommer le Switch|
+
 ## Configuration VLAN
+
 |Commandes | Utilisation|
 |:------|:-------|
 |#vlan <n°duVLAN>|Creation du VLAN|
 |#vlan <n°duVLAN></br>name <nom_du_vlan>|Attribue un nom au VLAN|
+
 ### Affectation des ports
 Pour affecter les ports du fa0/1 a fa0/10 a un VLAN
 ```
