@@ -1,10 +1,11 @@
 # Parametrer un switch
 ## Accés au Switch 
 Les Commandes a Connaitre
-|Commandes | Utilisation|
-|:------|:-------|
-|enable| Acces au mode priviligié|
-|#configure terminal| Mode de configuration globale|
+
+|Commandes|Utilisation|
+|:-----|:----|
+|enable|Acces au mode priviligié|
+|#configure terminal|Mode de configuration globale|
 |#hostname <nom_du_switch>|Nommer le Switch|
 ## Configuration VLAN
 |Commandes | Utilisation|
