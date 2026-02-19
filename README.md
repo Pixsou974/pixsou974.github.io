@@ -1,4 +1,7 @@
-# 🎉 Guide Super Fun de la Syntaxe Markdown ! 🎉
+| [Windows](./Windows.md) | [Cisco](./cisco.md) |
+| :---: | :---: |
+
+# 🎉 Mon Wiki 🎉
 
 Bienvenue dans le monde merveilleux du Markdown ! ✨ Préparez-vous à écrire de belles pages en un clin d'œil. 🚀
 
