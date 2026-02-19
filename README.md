@@ -1,5 +1,5 @@
-| [Windows](./Windows.md) | [Cisco](./cisco.md) |
-| :---: | :---: |
+| [Windows](./Windows.md) | [Cisco](./Cisco.md) |
+|:---:|:---:|
 
 # 🎉 Mon Wiki 🎉
 
