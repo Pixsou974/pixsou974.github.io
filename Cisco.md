@@ -97,4 +97,3 @@ Exemple pour la configuration d'un routeur
 ```
 Pour verifier la table de routage ```show ip route```  
 Mode debug de RIP ```debug ip rip```
-
