@@ -1,5 +1,5 @@
 
-|[RETOUR](README.md)|
+|[RETOUR](../README.md)|
 |:---|
 # Parametrer un switch
 ## Accés au Switch 
