@@ -1,6 +1,3 @@
-
-|[RETOUR](../README.md)|
-|:---|
 # Parametrer un switch
 ## Accés au Switch 
 Les Commandes a Connaitre
