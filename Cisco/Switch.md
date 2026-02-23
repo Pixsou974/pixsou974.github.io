@@ -29,7 +29,7 @@ Pour affecter les ports du fa0/1 a fa0/10 a un VLAN
 #switchport mode access
 #switchport port-security
 ```
-La commande ```switchport port-security maximum 2``` (par defaut: 1) permet de limiter le nombres d'adresses MAC autorisées sur un port </br>
+La commande ```switchport port-security maximum 2``` (par defaut: 1) permet de limiter le nombres d'adresses MAC autorisées sur un port
 
 Pour activer l'apprentissage dynamique et sécuriser des adresses apprises utilisez ```switchport port-security mac-address sticky```
 ```
@@ -59,6 +59,65 @@ Qui permet d'accepter 2 peripheriques maximum.
   ```
   show startup-config
   ```
+
+## Configuration ACLs
+
+![acl](../assets/acl.jpg)
+
+### Sur le Routeur
+```
+enable
+#configure terminal
+#interface gig0/0
+#no shutdown
+
+#interface gig0/0.10
+#encapsulation dot1Q 10
+#ip address 192.168.10.1 255.255.255.0
+
+#interface gig0/0.20
+#encapsulation dot1Q 20
+#ip address 192.168.20.1 255.255.255.0
+
+--- CREATION DES ACL DE FILTRAGE ---
+#ip access-list extended BLOCK_VLAN10
+#deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+#permit ip any any
+exit
+
+#ip access-list extended BLOCK_VLAN20
+#deny ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255
+#permit ip any any
+exit
+```
+### sur le switch L3 "3560-24PS"
+```
+enable
+#configure terminale
+
+--- Activation du routage L3 ---
+#ip routing
+
+--- Creation des VLANs ---
+#vlan 10
+#vlan 20
+
+--- Configuration des interfaces ---
+#interface Gig0/1
+#switchport mode trunk
+exit
+
+#interface Fa0/1
+#ip address 192.168.10.254 255.255.255.0
+#no shutdown
+exit
+
+#interface Fa0/2
+#ip address 192.168.20.254 255.255.255.0
+#no shutdown
+exit
+```
+
 # Parametrer un routeur
 ## Configuration des interfaces
 ```
@@ -69,8 +128,21 @@ enable
 #no shutdown
 #exit
 ```
+
+## Configuration (router-on-a-stick)
+```
+enable
+#configure terminal
+#interface <nom_de_l'interface> 
+#no shutdown
+#interface gig 0/0.10
+#encapsulation dot1q 10
+#ip address <adresse_ip> <masque_SR>
+```
+
+  
 ## Configuration des routes
-* **Route statique** : definie manuellement, ideal pour petit reseau lorsque le chemin est fixe</br>
+* **Route statique** : definie manuellement, ideal pour petit reseau lorsque le chemin est fixe
 ```ip route <destination> <masque_sous_reseau> <passerelle>```
 Pour verifier la route statique ```show ip route```
 Pour verifier la configuration IP des interfaces ```show ip interface brief```
